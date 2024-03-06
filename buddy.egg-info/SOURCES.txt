@@ -1,0 +1,13 @@
+setup.py
+buddy/__init__.py
+buddy/cli.py
+buddy.egg-info/PKG-INFO
+buddy.egg-info/SOURCES.txt
+buddy.egg-info/dependency_links.txt
+buddy.egg-info/entry_points.txt
+buddy.egg-info/requires.txt
+buddy.egg-info/top_level.txt
+buddy/comet/__init__.py
+buddy/comet/comet.py
+buddy/cw/__init__.py
+buddy/cw/cw.py
