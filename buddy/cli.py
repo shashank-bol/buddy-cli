@@ -2,9 +2,10 @@ import click
 import os
 from .comet import comet
 from .cw import cw
+from .creds import creds
 
 @click.command()
-@click.option("--t", "--type" , default = None, help="possible values are - comet, cw/cloudwatch, tf")
+@click.option("--t", "--type" , default = None, help="possible values are - comet, cw/cloudwatch, tf, creds")
 @click.option("--e", '--env', default=None, help="env name")
 @click.option("--p", '--profile', default=None, help="aws creentials profile")
 @click.option("--m", '--mode', default=None, help="comet mode")
@@ -17,3 +18,5 @@ def cli(t,e,p,m,c,s,d):
         comet.run(m , e , p)
     elif t == "cw" or t == "cloudwatch":
         cw.run(e , p)
+    elif t == "creds":
+        creds.run()
