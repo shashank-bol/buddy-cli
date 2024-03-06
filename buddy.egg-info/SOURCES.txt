@@ -9,5 +9,7 @@ buddy.egg-info/requires.txt
 buddy.egg-info/top_level.txt
 buddy/comet/__init__.py
 buddy/comet/comet.py
+buddy/creds/__init__.py
+buddy/creds/creds.py
 buddy/cw/__init__.py
 buddy/cw/cw.py
