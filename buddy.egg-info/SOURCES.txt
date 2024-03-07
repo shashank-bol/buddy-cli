@@ -13,3 +13,7 @@ buddy/creds/__init__.py
 buddy/creds/creds.py
 buddy/cw/__init__.py
 buddy/cw/cw.py
+buddy/s3/__init__.py
+buddy/s3/s3.py
+buddy/tf/__init__.py
+buddy/tf/tf.py

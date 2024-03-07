@@ -2,8 +2,9 @@ import click
 import boto3
 import json
 import subprocess
+import traceback
 aws_directory = ""
-def run(mode , env , profile):
+def run(mode , env , profile, close):
     if env is None:
         click.echo("Please enter env")
         return
@@ -15,6 +16,8 @@ def run(mode , env , profile):
     if profile is None:
         click.echo("Enter a Profile name")
         return
+    if close:
+        return close()
     try:
         credentials = profile.strip()
         selection = mode.upper()
@@ -308,11 +311,11 @@ def run(mode , env , profile):
 
             #     except:
             #         msg.config(text="Error", font='Helvetica', bg='#FF605C', fg='Black')
-        except:
-                click.echo("Enter a valid ENV")
-                env.delete(0, 'end')
-    except Exception as e:
-        print(e)
+        except :
+            traceback.print_exc() 
+            click.echo("Enter a valid ENV")
+    except :
+        traceback.print_exc() 
         return click.echo("Credntial profile was not found")
 
 
@@ -324,4 +327,3 @@ def close():
     out = subprocess.call(['kill $(lsof -t -i :9154) >/dev/null 2>&1'], shell=True)
     out = subprocess.call(['kill $(lsof -t -i :5595) >/dev/null 2>&1'], shell=True)
     print('Goodbye :)')
-    root.destroy()
